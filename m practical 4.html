@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Student Timetable</title>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f4f9;
+        padding: 20px;
+    }
+    table {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    caption {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+    }
+    th, td {
+        border: 1px solid #bbb;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #0066cc;
+        color: white;
+    }
+    tr:nth-child(even) td {
+        background-color: #f2f2f2;
+    }
+    tfoot td {
+        background-color: #ddd;
+        font-weight: bold;
+    }
+    col.group-time { background-color: #e0f7fa; }
+    col.group-subject { background-color: #f1f8e9; }
+</style>
+</head>
+<body>
+
+<table aria-label="Class 10A Timetable">
+    <caption>Class 10A - Weekly Timetable</caption>
+    
+    <colgroup>
+        <col class="group-time">
+        <col class="group-subject">
+        <col class="group-subject">
+        <col class="group-subject">
+        <col class="group-subject">
+        <col class="group-subject">
+    </colgroup>
+
+    <thead>
+        <tr>
+            <th scope="col">Time</th>
+            <th scope="col"><abbr title="Monday">Mon</abbr></th>
+            <th scope="col"><abbr title="Tuesday">Tue</abbr></th>
+            <th scope="col"><abbr title="Wednesday">Wed</abbr></th>
+            <th scope="col"><abbr title="Thursday">Thu</abbr></th>
+            <th scope="col"><abbr title="Friday">Fri</abbr></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th scope="row">08:00 - 09:00</th>
+            <td data-subject="Math">Math</td>
+            <td data-subject="English">English</td>
+            <td data-subject="Physics">Physics</td>
+            <td data-subject="Math">Math</td>
+            <td data-subject="History">History</td>
+        </tr>
+        <tr>
+            <th scope="row">09:00 - 10:00</th>
+            <td data-subject="Chemistry" rowspan="2">Chemistry</td>
+            <td data-subject="Biology">Biology</td>
+            <td data-subject="English">English</td>
+            <td data-subject="CS">Computer Science</td>
+            <td data-subject="Math">Math</td>
+        </tr>
+        <tr>
+            <th scope="row">10:00 - 11:00</th>
+            <td data-subject="Math">Math</td>
+            <td data-subject="History">History</td>
+            <td data-subject="Physics">Physics</td>
+            <td data-subject="English">English</td>
+        </tr>
+        <tr>
+            <th scope="row">11:00 - 12:00</th>
+            <td data-subject="English">English</td>
+            <td data-subject="CS">Computer Science</td>
+            <td data-subject="Math">Math</td>
+            <td data-subject="Biology">Biology</td>
+            <td data-subject="PE" rowspan="2">Physical Education</td>
+        </tr>
+        <tr>
+            <th scope="row">12:00 - 13:00</th>
+            <td data-subject="History">History</td>
+            <td data-subject="Math">Math</td>
+            <td data-subject="English">English</td>
+            <td data-subject="Physics">Physics</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="6">All classes are mandatory unless specified</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
