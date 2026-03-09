@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application Portal</title>
+    <style>
+        /* --- General Reset & Typography --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background: linear-gradient(90deg, #003366 0%, #0055a5 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #003366;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .portal-title h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .portal-title p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: #004080;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #002a55;
+        }
+
+        /* --- Main Form Container --- */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #0055a5;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .form-header h2 {
+            color: #003366;
+        }
+
+        /* --- Form Sections --- */
+        .form-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f9fbfd;
+            border: 1px solid #e1e8ed;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            color: #0055a5;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #0055a5;
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        /* --- Grid Layout for Inputs --- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #0055a5;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,85,165,0.2);
+        }
+
+        /* --- Buttons --- */
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .btn-reset {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #c82333;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.8rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-area {
+                margin-bottom: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">GOVT<br>LOGO</div>
+                <div class="portal-title">
+                    <h1>State Scholarship Portal</h1>
+                    <p>Ministry of Social Justice & Empowerment</p>
+                </div>
+            </div>
+            <div class="user-info">
+                <span>Welcome, Guest User</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Apply Online</a></li>
+            <li><a href="#">Application Status</a></li>
+            <li><a href="#">Help Desk</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="form-header">
+            <h2>New Scholarship Application</h2>
+            <p>Please fill in the details accurately. All fields marked with * are mandatory.</p>
+        </div>
+
+        <form id="scholarshipForm" onsubmit="return validateForm(event)">
+            
+            <!-- Section 1: Personal Details -->
+            <div class="form-section">
+                <h3 class="section-title">1. Personal Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Student Name *</label>
+                        <input type="text" name="studentName" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Father's Name *</label>
+                        <input type="text" name="fatherName" placeholder="Enter Father's Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Caste Category *</label>
+                        <select name="caste" required>
+                            <option value="">Select Category</option>
+                            <option value="General">General</option>
+                            <option value="OBC">OBC</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                            <option value="SBC">SBC</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number *</label>
+                        <input type="number" name="mobile" placeholder="10 Digit Mobile Number" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Permanent Address *</label>
+                        <textarea name="address" rows="3" placeholder="Enter full address with pincode" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Academic Details -->
+            <div class="form-section">
+                <h3 class="section-title">2. Academic Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Course Applied For *</label>
+                        <select name="course" required>
+                            <option value="">Select Course</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="B.Com">B.Com</option>
+                            <option value="B.A">B.A</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Medical">Medical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>College/Institute Name *</label>
+                        <input type="text" name="college" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Previous Year Percentage *</label>
+                        <input type="number" step="0.01" name="percentage" placeholder="e.g. 75.50" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Year of Study *</label>
+                        <select name="year" required>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Bank Details -->
+            <div class="form-section">
+                <h3 class="section-title">3. Bank Details (For DBT)</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Account Holder Name *</label>
+                        <input type="text" name="bankName" placeholder="Name as per Bank Passbook" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bank Account Number *</label>
+                        <input type="number" name="accountNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>IFSC Code *</label>
+                        <input type="text" name="ifsc" placeholder="e.g. SBIN0001234" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bank Name *</label>
+                        <input type="text" name="bankNameFull" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-reset" onclick="document.getElementById('scholarshipForm').reset()">Reset</button>
+                <button type="submit" class="btn btn-submit">Submit Application</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 State Scholarship Portal. All Rights Reserved.</p>
+        <p>Designed for Educational Purposes.</p>
+    </footer>
+
+    <!-- Simple JavaScript for Validation -->
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent actual submission for demo
+            
+            const form = document.getElementById('scholarshipForm');
+            
+            // Basic check to ensure all required fields are filled
+            if (form.checkValidity()) {
+                alert("Application Submitted Successfully!\n(This is a demo form)");
+                // Here you would normally send data to a server
+                // form.submit(); 
+            } else {
+                alert("Please fill in all required fields correctly.");
+            }
+        }
+    </script>
+
+</body>
+</html>
