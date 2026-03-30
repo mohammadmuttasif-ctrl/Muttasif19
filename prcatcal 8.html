@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body with gradient */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* Gallery grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Image box */
+        .image-box {
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Images */
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        /* Hover effect */
+        .image-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-box:hover img {
+            transform: scale(1.2);
+            filter: brightness(80%);
+        }
+
+        /* Overlay */
+        .image-box::after {
+            content: "View Image";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .image-box:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Image Gallery</h1>
+    </header>
+
+    <section class="gallery">
+        <div class="image-box">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Image 1">
+        </div>
+        <div class="image-box">
+            <img src="https://picsum.photos/id/1016/600/400" alt="Image 2">
+        </div>
+        <div class="image-box">
+            <img src="https://picsum.photos/id/1018/600/400" alt="Image 3">
+        </div>
+        <div class="image-box">
+            <img src="https://picsum.photos/id/1020/600/400" alt="Image 4">
+        </div>
+    </section>
+
+</body>
+</html>
