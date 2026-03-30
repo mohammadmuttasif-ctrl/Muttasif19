@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1d2b64, #f8cdda);
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f8cdda;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #1d2b64;
+        }
+
+        /* Image Section */
+        .profile-img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img img {
+            width: 250px;
+            border-radius: 50%;
+            border: 5px solid #f8cdda;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid #1d2b64;
+            display: inline-block;
+        }
+
+        .section p {
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #111;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#legacy">Legacy</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Dr. A.P.J. Abdul Kalam</h1>
+        <p>Missile Man of India</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Image -->
+        <div class="profile-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/A._P._J._Abdul_Kalam.jpg" alt="APJ Abdul Kalam">
+        </div>
+
+        <!-- About -->
+        <div class="section" id="about">
+            <h2>About</h2>
+            <p>
+                Dr. A.P.J. Abdul Kalam was an Indian aerospace scientist and the 11th President of India.
+                He played a key role in India's missile and nuclear programs and was widely known as the "Missile Man of India".
+            </p>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section" id="achievements">
+            <h2>Achievements</h2>
+            <p>
+                He was instrumental in the development of India's satellite launch vehicle and guided missile programs.
+                He received several prestigious awards including the Bharat Ratna, India's highest civilian honor.
+            </p>
+        </div>
+
+        <!-- Legacy -->
+        <div class="section" id="legacy">
+            <h2>Legacy</h2>
+            <p>
+                Dr. Kalam inspired millions with his vision for a developed India and his dedication to education,
+                innovation, and youth empowerment.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Tribute Page | Created with ❤️</p>
+    </footer>
+
+</body>
+</html>
